@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Problems">
+      <UniqueIdentifier>{0a5536f7-3a76-4d8c-a7a8-091fdfe657bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems">
+      <UniqueIdentifier>{24ccf804-6313-4d78-b59d-5fff1cf17afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Problems\1768">
+      <UniqueIdentifier>{98a3f36c-7d9e-4c3b-8642-0cfd1af22caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\1768">
+      <UniqueIdentifier>{4a0e48e0-d53d-43e8-bac2-ee282fa7e608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\1071">
+      <UniqueIdentifier>{7c908357-e07c-4e4b-adb3-6a698fffedaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\1431">
+      <UniqueIdentifier>{2bdd2817-77f7-4254-84b3-fd63f786ff7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\605">
+      <UniqueIdentifier>{287ebef7-e036-40f8-9fcb-0b778242b2af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LeetCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeStringsAlternatively.cpp">
+      <Filter>Source Files\Problems\1768</Filter>
+    </ClCompile>
+    <ClCompile Include="GreatestCommonDivisorOfStrings.cpp">
+      <Filter>Source Files\Problems\1071</Filter>
+    </ClCompile>
+    <ClCompile Include="KidsWithTheGreatestNumberOfCandies.cpp">
+      <Filter>Source Files\Problems\1431</Filter>
+    </ClCompile>
+    <ClCompile Include="CanPlaceFlowers.cpp">
+      <Filter>Source Files\Problems\605</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
