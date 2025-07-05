@@ -2,57 +2,65 @@
 //
 
 #include <iostream>
+#include <numeric>
 #include <vector>
 
-class CanPlaceFlowers {
+class ProductOfArrayExceptSelf {
 
-public:
-    static bool canPlaceFlowers(const std::vector<int>& flowerbed, int n) {
-        std::vector<int> flowerbedWorkspace = flowerbed;
-        int amountOfFlowersThatCanBePlaced = 0;
+	public:
+	std::vector<int> productExceptSelf(std::vector<int>& nums) {
+		std::vector<int> resultVector;
 
-        for (int i = 0; i <= flowerbedWorkspace.size() - 1; i++)
-        {
-            int currentPlotState = flowerbedWorkspace[i];
-            bool isNextPlotFull = false;
-            bool isPreviousPlotFull = false;
-            int nextElementIndex = i + 1;
-            int previousElementIndex = i - 1;
+		for (int i = 0; i <= nums.size() - 1; i++)
+		{
+			std::vector<int> leftValues(nums.begin(), nums.begin() + i);
+			std::vector<int> rightValues(nums.begin() + i + 1, nums.end());
 
-            if (nextElementIndex <= flowerbedWorkspace.size() - 1)
-            {
-                int adjecentPlotState = flowerbedWorkspace[nextElementIndex];
+			auto left_side_multiplication = std::accumulate(std::begin(leftValues), end(leftValues), 1.0, std::multiplies<int>());
+			auto right_side_multiplication = std::accumulate(std::begin(rightValues), std::end(rightValues), 1.0, std::multiplies<int>());
 
-                isNextPlotFull = adjecentPlotState == 1;
-            }
+			resultVector.push_back(static_cast<int>(left_side_multiplication * right_side_multiplication));
+		}
 
-            if (previousElementIndex >= 0)
-            {
-                int previousPlotState = flowerbedWorkspace[previousElementIndex];
+		return resultVector;
+	}
 
-                isPreviousPlotFull = previousPlotState == 1;
-            }
+	std::vector<int> productExceptSelfV2(std::vector<int>& nums) {
+		std::vector<int> resultVector(nums.size(), 1);
+		std::vector<int> leftProducts(nums.size(), 1);
+		std::vector<int> rightProducts(nums.size(), 1);
 
-            if (currentPlotState == 0 && !isNextPlotFull && !isPreviousPlotFull)
-            {
-                amountOfFlowersThatCanBePlaced++;
-                flowerbedWorkspace[i] = 1;
-            }
-        }
+		for (int i = 1; i < nums.size(); i++)
+		{
+			leftProducts[i] = leftProducts[i - 1] * nums[i - 1];
+		}
 
-        return amountOfFlowersThatCanBePlaced >= n;
-    }
+		for (int i = nums.size() - 2; i >= 0; --i)
+		{
+			rightProducts[i] = rightProducts[i + 1] * nums[i + 1];
+		}
+
+		for (int i = 0; i < nums.size(); ++i)
+		{
+			resultVector[i] = leftProducts[i] * rightProducts[i];
+		}
+
+		return resultVector;
+	}
 };
 
 int main() {
-    int testElement[] = { 1,0,0,0,0,1 };
+    int testElement[] = { 1, 2, 3 ,4};
     int n = std::size(testElement);
 
     std::vector<int> testVector(testElement, testElement + n);
 
-    CanPlaceFlowers* m = new CanPlaceFlowers();
-    m->canPlaceFlowers(testVector, 2);
-	std::cout << "Hello World!\n";
+    ProductOfArrayExceptSelf* m = new ProductOfArrayExceptSelf();
+    m->productExceptSelfV2(testVector);
+
+	//ReverseWordsInAString* r = new ReverseWordsInAString();
+	//r->reverseWords("a good   example");
+	//std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -128,6 +128,9 @@
     <ClCompile Include="KidsWithTheGreatestNumberOfCandies.cpp" />
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="MergeStringsAlternatively.cpp" />
+    <ClCompile Include="ProductOfArrayExceptSelf.cpp" />
+    <ClCompile Include="ReverseVowelsOfAString.cpp" />
+    <ClCompile Include="ReverseWordsInAString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

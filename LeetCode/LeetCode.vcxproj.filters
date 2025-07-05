@@ -34,6 +34,15 @@
     <Filter Include="Source Files\Problems\605">
       <UniqueIdentifier>{287ebef7-e036-40f8-9fcb-0b778242b2af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Problems\345">
+      <UniqueIdentifier>{ee42b6f4-92ec-4768-baa7-9f7ad43b9877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\151">
+      <UniqueIdentifier>{42f88233-db9b-4e3d-a15e-5eca02707904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Problems\238">
+      <UniqueIdentifier>{3a90985e-7515-48f7-aa6d-1dcdafbe0105}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp">
@@ -50,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="CanPlaceFlowers.cpp">
       <Filter>Source Files\Problems\605</Filter>
+    </ClCompile>
+    <ClCompile Include="ReverseVowelsOfAString.cpp">
+      <Filter>Source Files\Problems\345</Filter>
+    </ClCompile>
+    <ClCompile Include="ReverseWordsInAString.cpp">
+      <Filter>Source Files\Problems\151</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductOfArrayExceptSelf.cpp">
+      <Filter>Source Files\Problems\238</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
