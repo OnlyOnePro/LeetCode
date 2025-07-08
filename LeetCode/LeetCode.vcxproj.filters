@@ -43,6 +43,9 @@
     <Filter Include="Source Files\Problems\238">
       <UniqueIdentifier>{3a90985e-7515-48f7-aa6d-1dcdafbe0105}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Problems\443">
+      <UniqueIdentifier>{529b7d0f-d74b-406e-8afe-9c41abce333b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="ProductOfArrayExceptSelf.cpp">
       <Filter>Source Files\Problems\238</Filter>
+    </ClCompile>
+    <ClCompile Include="StringCompression.cpp">
+      <Filter>Source Files\Problems\443</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

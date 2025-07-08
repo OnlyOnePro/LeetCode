@@ -2,61 +2,69 @@
 //
 
 #include <iostream>
+#include <map>
 #include <numeric>
+#include <string>
 #include <vector>
 
-class ProductOfArrayExceptSelf {
-
+class StringCompression {
 	public:
-	std::vector<int> productExceptSelf(std::vector<int>& nums) {
-		std::vector<int> resultVector;
+	static int compress(std::vector<char>& chars) {
+		std::string s;
 
-		for (int i = 0; i <= nums.size() - 1; i++)
+		char current_character = chars[0];
+		int current_character_amounts = 0;
+
+		for (int i = 0; i <= chars.size() - 1; i++)
 		{
-			std::vector<int> leftValues(nums.begin(), nums.begin() + i);
-			std::vector<int> rightValues(nums.begin() + i + 1, nums.end());
+			if (chars[i] == current_character)
+			{
+				++current_character_amounts;
+			}
+			else
+			{
+				if (current_character_amounts > 1)
+				{
+					s += current_character;
+					s += std::to_string(current_character_amounts);
+				}
+				else
+				{
+					s += current_character;
+				}
 
-			auto left_side_multiplication = std::accumulate(std::begin(leftValues), end(leftValues), 1.0, std::multiplies<int>());
-			auto right_side_multiplication = std::accumulate(std::begin(rightValues), std::end(rightValues), 1.0, std::multiplies<int>());
 
-			resultVector.push_back(static_cast<int>(left_side_multiplication * right_side_multiplication));
+				current_character = chars[i];
+				current_character_amounts = 1;
+			}
 		}
 
-		return resultVector;
-	}
+		s += current_character;
 
-	std::vector<int> productExceptSelfV2(std::vector<int>& nums) {
-		std::vector<int> resultVector(nums.size(), 1);
-		std::vector<int> leftProducts(nums.size(), 1);
-		std::vector<int> rightProducts(nums.size(), 1);
-
-		for (int i = 1; i < nums.size(); i++)
+		if (current_character_amounts > 1)
 		{
-			leftProducts[i] = leftProducts[i - 1] * nums[i - 1];
+			s += std::to_string(current_character_amounts);
 		}
 
-		for (int i = nums.size() - 2; i >= 0; --i)
+		chars.clear();
+
+		for (const char& character : s)
 		{
-			rightProducts[i] = rightProducts[i + 1] * nums[i + 1];
+			chars.push_back(character);
 		}
 
-		for (int i = 0; i < nums.size(); ++i)
-		{
-			resultVector[i] = leftProducts[i] * rightProducts[i];
-		}
-
-		return resultVector;
+		return chars.size();
 	}
 };
 
 int main() {
-    int testElement[] = { 1, 2, 3 ,4};
+    char testElement[] = { 'a','a','b','b','c','c', 'c'};
     int n = std::size(testElement);
 
-    std::vector<int> testVector(testElement, testElement + n);
+    std::vector<char> testVector(testElement, testElement + n);
 
-    ProductOfArrayExceptSelf* m = new ProductOfArrayExceptSelf();
-    m->productExceptSelfV2(testVector);
+    StringCompression* m = new StringCompression();
+    m->compress(testVector);
 
 	//ReverseWordsInAString* r = new ReverseWordsInAString();
 	//r->reverseWords("a good   example");
