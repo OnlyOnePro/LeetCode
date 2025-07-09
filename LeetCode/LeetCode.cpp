@@ -7,64 +7,66 @@
 #include <string>
 #include <vector>
 
-class StringCompression {
-	public:
-	static int compress(std::vector<char>& chars) {
-		std::string s;
+#include "Problems/TwoPointers/TwoPointerProblems.h"
 
-		char current_character = chars[0];
-		int current_character_amounts = 0;
-
-		for (int i = 0; i <= chars.size() - 1; i++)
-		{
-			if (chars[i] == current_character)
-			{
-				++current_character_amounts;
-			}
-			else
-			{
-				if (current_character_amounts > 1)
-				{
-					s += current_character;
-					s += std::to_string(current_character_amounts);
-				}
-				else
-				{
-					s += current_character;
-				}
-
-
-				current_character = chars[i];
-				current_character_amounts = 1;
-			}
-		}
-
-		s += current_character;
-
-		if (current_character_amounts > 1)
-		{
-			s += std::to_string(current_character_amounts);
-		}
-
-		chars.clear();
-
-		for (const char& character : s)
-		{
-			chars.push_back(character);
-		}
-
-		return chars.size();
-	}
-};
+//class StringCompression {
+//	public:
+//	static int compress(std::vector<char>& chars) {
+//		std::string s;
+//
+//		char current_character = chars[0];
+//		int current_character_amounts = 0;
+//
+//		for (int i = 0; i <= chars.size() - 1; i++)
+//		{
+//			if (chars[i] == current_character)
+//			{
+//				++current_character_amounts;
+//			}
+//			else
+//			{
+//				if (current_character_amounts > 1)
+//				{
+//					s += current_character;
+//					s += std::to_string(current_character_amounts);
+//				}
+//				else
+//				{
+//					s += current_character;
+//				}
+//
+//
+//				current_character = chars[i];
+//				current_character_amounts = 1;
+//			}
+//		}
+//
+//		s += current_character;
+//
+//		if (current_character_amounts > 1)
+//		{
+//			s += std::to_string(current_character_amounts);
+//		}
+//
+//		chars.clear();
+//
+//		for (const char& character : s)
+//		{
+//			chars.push_back(character);
+//		}
+//
+//		return chars.size();
+//	}
+//};
 
 int main() {
-    char testElement[] = { 'a','a','b','b','c','c', 'c'};
+    int testElement[] = { 0,0,1 };
     int n = std::size(testElement);
 
-    std::vector<char> testVector(testElement, testElement + n);
+    std::vector<int> testVector(testElement, testElement + n);
 
-    StringCompression* m = new StringCompression();
-    m->compress(testVector);
+    TwoPointerProblems* pp = new TwoPointerProblems();
+    pp->isSubsequence("acb", "ahbgdc");
 
 	//ReverseWordsInAString* r = new ReverseWordsInAString();
 	//r->reverseWords("a good   example");

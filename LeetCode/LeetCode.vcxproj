@@ -130,10 +130,14 @@
     <ClCompile Include="KidsWithTheGreatestNumberOfCandies.cpp" />
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="MergeStringsAlternatively.cpp" />
+    <ClCompile Include="Problems\TwoPointers\TwoPointerProblems.cpp" />
     <ClCompile Include="ProductOfArrayExceptSelf.cpp" />
     <ClCompile Include="ReverseVowelsOfAString.cpp" />
     <ClCompile Include="ReverseWordsInAString.cpp" />
     <ClCompile Include="StringCompression.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Problems\TwoPointers\TwoPointerProblems.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

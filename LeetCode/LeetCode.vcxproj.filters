@@ -46,6 +46,12 @@
     <Filter Include="Source Files\Problems\443">
       <UniqueIdentifier>{529b7d0f-d74b-406e-8afe-9c41abce333b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Problems\TwoPointers">
+      <UniqueIdentifier>{2715e854-f80d-44ed-baef-afd790fd33f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Problems\TwoPointers">
+      <UniqueIdentifier>{ba882ea0-7653-4499-bc27-564c7258fb73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp">
@@ -75,5 +81,13 @@
     <ClCompile Include="StringCompression.cpp">
       <Filter>Source Files\Problems\443</Filter>
     </ClCompile>
+    <ClCompile Include="Problems\TwoPointers\TwoPointerProblems.cpp">
+      <Filter>Source Files\Problems\TwoPointers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Problems\TwoPointers\TwoPointerProblems.h">
+      <Filter>Header Files\Problems\TwoPointers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
