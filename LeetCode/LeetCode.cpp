@@ -60,13 +60,13 @@
 //};
 
 int main() {
-    int testElement[] = { 0,0,1 };
+    int testElement[] = { 1,2,3,4 };
     int n = std::size(testElement);
 
     std::vector<int> testVector(testElement, testElement + n);
 
     TwoPointerProblems* pp = new TwoPointerProblems();
-    pp->isSubsequence("acb", "ahbgdc");
+    auto x = pp->maxOperations(testVector, 5);
 
 	//ReverseWordsInAString* r = new ReverseWordsInAString();
 	//r->reverseWords("a good   example");
